@@ -1,0 +1,201 @@
+body {
+  font-family: arial;
+  background-image: url("../img/fondo.png");
+  max-width: 1000px;
+  margin: 0 auto;
+  /* Centrado */
+}
+
+header {
+  min-height: 100px;
+  margin-bottom: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+nav,
+footer {
+  clear: both;
+  margin-bottom: 10px;
+  padding: 4px;
+  text-align: center;
+  background-color: #424242;
+  font-size: 80%;
+}
+
+.izq, .der, time{
+  color:#ffffff
+}
+
+section {
+  width: 45%;
+  min-width: 300px;
+  margin: 0px 0px 15px 0px;
+  padding: 15px 5px 5px 5px;
+  background-color: beige;
+  box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.75);
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif; /*Añadida fuente ink -> no podia canviar color, així que*/
+  font-size: 120%;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+h2,
+h3 {
+  font-family: "Zalando Sans"; /*Añadida fuente zalando*/
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+#logo {
+  float: left;
+  min-width: 60px;
+
+  /*Añadido*/
+  border-radius: 50%;
+}
+
+#eslogan {
+  float: left;
+  margin: 5% 5%;
+  color: #88c4ff;
+}
+
+#registro {
+  position: absolute;
+  top: 5px;
+  right: 10%;
+}
+
+table {
+  background-color: #383838;
+  border-collapse: collapse;
+  color: #ffffff;
+  font-size: 18px;
+  border: 1px;
+  margin: 10px auto;
+  margin-top: 20px auto;
+
+}
+th {
+  background-color: #000000;
+}
+td,
+th {
+  
+  text-align: center;
+  border: 5px solid;
+  padding: 10px;
+  width: 10%;
+}
+
+#registro a:hover {
+  color: blue;
+}
+
+nav a {
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+nav a:hover {
+  color: #aaaaaa;
+}
+
+nav li {
+  display: inline;
+  padding: 0 40px 0 0;
+}
+
+section#blog {
+  float: right;
+}
+
+.valoracion-usuario {
+  font-style: italic;
+}
+
+.botonleermas {
+  font-size: 80%;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.izq {
+  float: left;
+  margin-top: 0px;
+  text-align: left;
+}
+
+.der {
+  margin-top: 0px;
+  text-align: right;
+}
+
+/*Añadido*/
+.noticias_laterales {
+  background-color: #f4f4f4;
+  padding: 20px;
+  height: 100%;
+  width: 250px;
+  float: right;
+}
+
+header > img {
+  width: 15%;
+}
+img {
+  max-width: 50%;
+}
+
+/*AÑADIR FUENTES PROPIAS (LINK GOOGLE FONTS)*/
+
+.zalando {
+  font-family: "Zalando Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.ink {
+  font-family: "Bitcount Prop Single Ink", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0, "SZP1" 0,
+    "SZP2" 0, "XPN1" 0, "XPN2" 0, "YPN1" 0, "YPN2" 0;
+}
+
+
+/*Añadido gallery-grid*/
+.galeria-flex {
+  display: flex;        /* actives Flexbox */
+  flex-wrap: wrap;      /* les imatges salten a una nova línia */
+  gap: 15px;            /* espai entre imatges */
+  justify-content: center; /* centra la galeria horitzontalment */
+}
+
+.galeria-flex img {
+  width: 200px;         /* cada imatge ocupa 200px d’ample */
+  height: 200px;        /* alçada fixa perquè totes quedin iguals */
+  object-fit: cover;    /* retalla sense deformar */
+  border-radius: 10px;
+}
+
+
+/*Añadido - CSS DE TABLA*/
+h1.titulo-tabla {
+  color: #000000;
+  text-align: center;
+  font-size: 40px ;
+}
+
