@@ -24,7 +24,7 @@ $actividades = json_decode(file_get_contents($file),true);
                 <td> <?= $id ?> </td>
                 <td> <?= $actividad['nombre'] ?> </td>
                 <td> <?= $actividad['plazas'] ?> </td>
-                <td> <img src= "<?= $url = $actividad['img_URL']?>" alt="Imagen no visualizada" </td>
+                <td> <img src= "<?=$actividad['img_URL']?>" alt="Imagen no visualizada"> </td>
             </tr>
         <?php endforeach; ?>
         

@@ -14,6 +14,7 @@
  **/
 
 
+
 ini_set('display_errors', 1); //mode depurador de programes
 
 // Comprovem si hi ha action, y si la petició ve del nostre portal -> denegar access
@@ -23,6 +24,8 @@ if (isset($_GET['action']) && (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERV
 } else {
     // Si sí que ve del portal, continua normal
 
+    //Important: session_start() ha d’executar-se abans de qualsevol sortida HTML, és a dir, abans que s’imprimeixi cap <html>, <head>, o echo.
+    require_once(dirname(__FILE__) . "/partials/sessions.php");
 
     $action = (array_key_exists('action', $_REQUEST)) ? $_REQUEST["action"] : "home";
 
