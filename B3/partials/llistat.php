@@ -1,17 +1,32 @@
+<br></br>
 <H1>FORMULARIO COMPLETADO</H1>
 <br></br>
 <H1>ACTIVIDADES LISTADAS</H1>
 
-<table>
-    <tr>
-        <th>header1</th>
-        <th>header2</th>
-        <th>header3</th>
-    </tr>
-    <tr>
-        <td>cont1</td>
-        <td>cont2</td>
-        <td>cont3</td>
-    </tr>
 
+<?php 
+$file = "actividades_con_foto.json";
+$actividades = json_decode(file_get_contents($file),true);
+?>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>PLAZAS</th>
+            <th>FOTO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($actividades as $id => $actividad): ?> <!-- --$id → la clave, $actividad → el valor asociado a esa clave-->
+            <tr>
+                <td> <?= $id ?> </td>
+                <td> <?= $actividad['nombre'] ?> </td>
+                <td> <?= $actividad['plazas'] ?> </td>
+                <td> <img src= "<?= $url = $actividad['img_URL']?>" alt="Imagen no visualizada" </td>
+            </tr>
+        <?php endforeach; ?>
+        
+    </tbody>
 </table>
