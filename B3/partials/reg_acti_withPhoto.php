@@ -23,12 +23,13 @@ if (!isset($_POST['nombre']) || !isset($_POST['id']) || !isset($_POST['plazas'])
     //Dirección de la foto para almacenarla
     $carpeta_destino = dirname(__FILE__) . "/../media/fotos_reg_acti/";
     $nombre_archivo = basename($_FILES["foto_actividad"]["name"]);
-    $destino_img = $carpeta_destino . $nombre_archivo;
+    $destino_img_absoluta = $carpeta_destino . $nombre_archivo;
+    $destino_img_relativa = "media/fotos_reg_acti/" . $nombre_archivo;
 
     $nueva_actividad = [
         'nombre' => $nombre,
         'plazas' => $plazas,
-        'img_URL' => $destino_img //ruta donde está la img
+        'img_URL' => $destino_img_relativa //ruta RELATIVA img -> <img src="..." alt="..."> -> necesitar ruta relativa
     ];
 
 
@@ -40,7 +41,7 @@ if (!isset($_POST['nombre']) || !isset($_POST['id']) || !isset($_POST['plazas'])
         }else{
 
             //Store image in folder
-            if(!store_img($carpeta_destino, $destino_img)){
+            if(!store_img($carpeta_destino, $destino_img_absoluta)){
                 $error_msg = "Error al almacenar la imagen";
                 $central = "/partials/form_activitat.php";
             }
@@ -53,7 +54,7 @@ if (!isset($_POST['nombre']) || !isset($_POST['id']) || !isset($_POST['plazas'])
     }else{
 
         //Store image in folder
-        if(!store_img($carpeta_destino, $destino_img)){
+        if(!store_img($carpeta_destino, $destino_img_absoluta)){
             $error_msg = "Error al almacenar la imagen";
             $central = "/partials/form_activitat.php";
         }
@@ -66,12 +67,13 @@ if (!isset($_POST['nombre']) || !isset($_POST['id']) || !isset($_POST['plazas'])
 }
 
 
-
-function store_img ($carpeta_destino, $destino_img){
+//move_uploaded_file() necesita ruta absoluta, pero al mostrar la img en html -> <img src="..." alt="..."> -> necesitar ruta relativa para poder abrirse en navegador
+//por eso almacenamos ruta_relativa, y no
+function store_img ($carpeta_destino, $destino_img_absoluta){
     if(!file_exists($carpeta_destino)){
         mkdir($carpeta_destino, 0777, true);
     }
-    if(move_uploaded_file($_FILES["foto_actividad"]["tmp_name"], $destino_img)){ //from (tmp route form) - to (ruta destino incluyendo nombre archivo)
+    if(move_uploaded_file($_FILES["foto_actividad"]["tmp_name"], $destino_img_absoluta)){ //from (tmp route form) - to (ruta destino incluyendo nombre archivo)
         return true;
     }else{
         return false;

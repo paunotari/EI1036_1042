@@ -1,7 +1,7 @@
 <main>
 
   <h1>Gestión de Actividades </h1>
-  <form class="fom_usuario" action="?action=reg_acti_withPhoto" method="POST">
+  <form class="fom_usuario" action="?action=reg_acti_withPhoto" method="POST" enctype="multipart/form-data">
 
     <legend>Datos básicos</legend>
 

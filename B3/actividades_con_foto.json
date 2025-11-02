@@ -1,23 +1,17 @@
 {
-    "1234567Y": {
-        "nombre": "TESR",
-        "plazas": 22,
-        "img_URL": "/Applications/XAMPP/xamppfiles/htdocs/EI1036_1042/B3/media/fotos_reg_acti/img_puesta_manualmente.png"
-        
-    },
-    "1234567O": {
-        "nombre": "ee",
-        "plazas": 12,
-        "img_URL": "\/Applications\/XAMPP\/xamppfiles\/htdocs\/EI1036_1042\/B3\/partials\/..\/media\/fotos_reg_acti\/"
-    },
-    "1234567K": {
-        "nombre": "hola1",
-        "plazas": 22,
-        "img_URL": "\/Applications\/XAMPP\/xamppfiles\/htdocs\/EI1036_1042\/B3\/partials\/..\/media\/fotos_reg_acti\/"
-    },
-    "1111111Q": {
-        "nombre": "WEWEWE",
+    "1212123W": {
+        "nombre": "test relativ 2",
         "plazas": 11,
-        "img_URL": "\/Applications\/XAMPP\/xamppfiles\/htdocs\/EI1036_1042\/B3\/partials\/..\/media\/fotos_reg_acti\/"
+        "img_URL": "media\/fotos_reg_acti\/elder_ring_wallpaper.jpeg"
+    },
+    "1234567U": {
+        "nombre": "TEST RELATIV 3",
+        "plazas": 44,
+        "img_URL": "media\/fotos_reg_acti\/dandadan-anime-tv-series-qz.jpg"
+    },
+    "0000000R": {
+        "nombre": "test relay jpg 4",
+        "plazas": 14,
+        "img_URL": "media\/fotos_reg_acti\/Logo_UJI_(2017).jpg"
     }
 }
