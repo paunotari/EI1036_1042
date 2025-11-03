@@ -34,24 +34,12 @@ if (!isset($_POST['nombre']) || !isset($_POST['id']) || !isset($_POST['plazas'])
 
 
     if(file_exists($fichero)){
+        
         $actividades = json_decode(file_get_contents($fichero), true); //decode -> true -> JSON objects will be returned as associative arrays
         if(isset($actividades[$id])){
             $error_msg = "El id de actividad ya existe";
             $central = "/partials/form_activitat.php";
-        }else{
-
-            //Store image in folder
-            if(!store_img($carpeta_destino, $destino_img_absoluta)){
-                $error_msg = "Error al almacenar la imagen";
-                $central = "/partials/form_activitat.php";
-            }
-
-            //Store actividad in json 
-            $actividades[$id] = $nueva_actividad; //Recorda, diccionari [$id]
-            file_put_contents($fichero, json_encode($actividades, JSON_PRETTY_PRINT, JSON_UNESCAPED_UNICODE));
-            $central = "/partials/llistat.php";
         }
-    }else{
 
         //Store image in folder
         if(!store_img($carpeta_destino, $destino_img_absoluta)){
@@ -59,8 +47,9 @@ if (!isset($_POST['nombre']) || !isset($_POST['id']) || !isset($_POST['plazas'])
             $central = "/partials/form_activitat.php";
         }
 
-        $actividades[$id] = $nueva_actividad;
-        file_put_contents($fichero, json_encode($actividades, JSON_PRETTY_PRINT, JSON_UNESCAPED_UNICODE )) ;
+        //Store actividad in json 
+        $actividades[$id] = $nueva_actividad; //Recorda, diccionari [$id]
+        file_put_contents($fichero, json_encode($actividades, JSON_PRETTY_PRINT, JSON_UNESCAPED_UNICODE));
         $central = "/partials/llistat.php";
     }
 
