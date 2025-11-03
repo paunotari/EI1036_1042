@@ -18,5 +18,10 @@
         "nombre": "test optim reg_Acti_foto",
         "plazas": 45,
         "img_URL": "media\/fotos_reg_acti\/Logo_UJI_(2017).jpg"
+    },
+    "1212123D": {
+        "nombre": "test2",
+        "plazas": 22,
+        "img_URL": "media\/fotos_reg_acti\/Screenshot 2025-11-02 at 10.53.12.png"
     }
 }
