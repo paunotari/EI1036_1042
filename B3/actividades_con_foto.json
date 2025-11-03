@@ -13,5 +13,10 @@
         "nombre": "test relay jpg 4",
         "plazas": 14,
         "img_URL": "media\/fotos_reg_acti\/Logo_UJI_(2017).jpg"
+    },
+    "0101012W": {
+        "nombre": "test optim reg_Acti_foto",
+        "plazas": 45,
+        "img_URL": "media\/fotos_reg_acti\/Logo_UJI_(2017).jpg"
     }
 }
