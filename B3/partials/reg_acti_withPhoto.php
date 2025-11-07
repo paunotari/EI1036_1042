@@ -2,16 +2,16 @@
 <?php
 
 //Gestion de errores
-if (!isset($_POST['nombre']) || !isset($_POST['id']) || !isset($_POST['plazas']) || !isset($_FILES['foto_actividad'])){
+if (!isset($_POST['nombre']) || !isset($_POST['id']) || !isset($_POST['plazas']) || !isset($_FILES['foto_actividad'])) {
     $error_msg = "Faltan campos obligatorios";
     $central = "/partials/form_activitat.php";
-}elseif(!preg_match("/^[0-9]{7}[A-Z,Ñ]{1}?/", $_POST['id'])){
+} elseif (!preg_match("/^[0-9]{7}[A-Z,Ñ]{1}?/", $_POST['id'])) {
     $error_msg = "El id no sigue el formato indicado (7 num, 1 letra mayúscula)";
     $central = "/partials/form_activitat.php";
-}elseif(!ctype_digit($_POST['plazas'])){
+} elseif (!ctype_digit($_POST['plazas'])) {
     $error_msg = "El numero de plazas debe ser un numero entero";
     $central = "/partials/form_activitat.php";
-}else{
+} else {
 
     $nombre = $_POST['nombre'];
     $id = $_POST['id'];
@@ -33,17 +33,17 @@ if (!isset($_POST['nombre']) || !isset($_POST['id']) || !isset($_POST['plazas'])
     ];
 
 
-    if(file_exists($fichero)){
+    if (file_exists($fichero)) {
         $actividades = json_decode(file_get_contents($fichero), true); //decode -> true -> JSON objects will be returned as associative arrays
-    } 
-    
-    if(isset($actividades[$id])){
+    }
+
+    if (isset($actividades[$id])) {
         $error_msg = "El id de actividad ya existe";
         $central = "/partials/form_activitat.php";
     }
 
     //Store image in folder
-    if(!store_img($carpeta_destino, $destino_img_absoluta)){
+    if (!store_img($carpeta_destino, $destino_img_absoluta)) {
         $error_msg = "Error al almacenar la imagen";
         $central = "/partials/form_activitat.php";
     }
@@ -59,13 +59,14 @@ if (!isset($_POST['nombre']) || !isset($_POST['id']) || !isset($_POST['plazas'])
 
 //move_uploaded_file() necesita ruta absoluta, pero al mostrar la img en html -> <img src="..." alt="..."> -> necesitar ruta relativa para poder abrirse en navegador
 //por eso almacenamos ruta_relativa, y no
-function store_img ($carpeta_destino, $destino_img_absoluta){
-    if(!file_exists($carpeta_destino)){
+function store_img($carpeta_destino, $destino_img_absoluta)
+{
+    if (!file_exists($carpeta_destino)) {
         mkdir($carpeta_destino, 0777, true);
     }
-    if(move_uploaded_file($_FILES["foto_actividad"]["tmp_name"], $destino_img_absoluta)){ //from (tmp route form) - to (ruta destino incluyendo nombre archivo)
+    if (move_uploaded_file($_FILES["foto_actividad"]["tmp_name"], $destino_img_absoluta)) { //from (tmp route form) - to (ruta destino incluyendo nombre archivo)
         return true;
-    }else{
+    } else {
         return false;
     }
 }
