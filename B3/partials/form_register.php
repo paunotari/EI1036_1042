@@ -12,36 +12,21 @@
 
   <h2>Formulario de Registro</h2>
 
-  <form action="javascript:console.log(this.fname.value);">  
+  <form action="?action=reg_acti_DB">  
   
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" required><br><br>
+    <label for="login">Login:</label><br>
+    <input type="text" id="login" name="login" required><br><br>
 
 
-    <label for="email">Correo electrónico:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
-
-
-    <label for="password">Contraseña:</label><br>
+    <label for="password">Pasword:</label><br>
     <input type="password" id="password" name="password" minlength="6" required><br><br>
 
 
-    <label for="edad">Edad:</label><br>
-    <input type="number" id="edad" name="edad" min="18" max="100"><br><br>
+    <label for="rol">Rol:</label><br>
+    <input type="text" id="rol" name="rol" required><br><br>
 
 
-    <label for="pais">País:</label><br>
-    <select id="pais" name="pais">
-      <option value="es">España</option>
-      <option value="mx">México</option>
-      <option value="ar">Argentina</option>
-    </select><br><br>
-
-
-    <label for="comentarios">Comentarios:</label><br>
-    <textarea id="comentarios" name="comentarios" rows="4" cols="40"></textarea><br><br>
-
-
+    
     <input type="submit" value="Enviar">
     <input type="reset" value="Borrar">
   </form>

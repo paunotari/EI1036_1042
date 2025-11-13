@@ -71,6 +71,12 @@ if (isset($_GET['action']) && (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERV
             require_once(dirname(__FILE__) . "/partials/reg_acti_withPhoto.php"); // Se ejecuta al momento
             break;
 
+        //EJ9 B3
+        case "reg_acti_DB":
+            require_once(dirname(__FILE__) . "/reg_acti_DB.php"); // Se ejecuta al momento
+            break;
+        
+        
 
         //Añadido B3
         case "form_foto":
@@ -81,7 +87,6 @@ if (isset($_GET['action']) && (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERV
             $central = "/partials/foto_upload.php";
             break;
 
-        //
 
 
         //Modificado practica B3

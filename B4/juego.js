@@ -37,7 +37,7 @@ function dibujaSuperpuesto(context, coors, recs){
 function getMousePos(canvas, evt){
     var rect = canvas.getBoundingClientRect();
     return{
-        x: evt.clientX - rect.left,
+        x: evt.clientX - rect.left, // or offsetX, offsetY -> devuelve las coordenadas el target en el que has hecho click (canvas) directamente
         y: evt.clientY - rect.top
     }
 }
