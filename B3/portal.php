@@ -58,10 +58,15 @@ if (isset($_GET['action']) && (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERV
             $central = "/partials/llistat.php";
             break;
             
-        //Añadido
+        //Añadido 
         case "form_activitat":
             $central = "/partials/form_activitat.php";
             break;
+        //Añadido B4
+        case "form_activitat_javascript":
+            $central = "/partials/form_activitat_javascript.php";
+            break;
+        
         //Añadido B3  -> require once logica php del forma activitat
         case "reg_acti":
             require_once(dirname(__FILE__) . "/partials/reg_acti.php"); // Se ejecuta al momento
@@ -69,6 +74,10 @@ if (isset($_GET['action']) && (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERV
         //Añadido B3, para el reg_acti_withPhoto
         case "reg_acti_withPhoto":
             require_once(dirname(__FILE__) . "/partials/reg_acti_withPhoto.php"); // Se ejecuta al momento
+            break;
+        //Añadido B4, para el reg_acti_withPhoto_javascript
+        case "reg_acti_withPhoto_javascript":
+            require_once(dirname(__FILE__) . "/partials/reg_acti_withPhoto_javascript.php"); // Se ejecuta al momento
             break;
 
         //EJ9 B3
@@ -112,5 +121,5 @@ if (isset($error_msg)) require_once(dirname(__FILE__) . "/partials/error.php");
 require_once(dirname(__FILE__) . "/partials/noticias.php");
 
 require_once(dirname(__FILE__) . $central);
-echo "<br />", $action, "<br />", dirname(__FILE__), "<br />";
+
 require_once(dirname(__FILE__) . "/partials/footer.php");

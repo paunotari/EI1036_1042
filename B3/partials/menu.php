@@ -23,6 +23,9 @@
 			<a href="?action=form_activitat">Formulari Activitat</a>
 		</li>
 		<li>
+			<a href="?action=form_activitat_javascript">Form Act JavaScr</a>
+		</li>
+		<li>
 			<a href="?action=form_foto"> Formulari Foto</a>
 		</li>
 

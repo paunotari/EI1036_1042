@@ -19,7 +19,7 @@ if(!isset($_SESSION["activo"])){
     echo "<h1>bienvenido de nuevo ", $_SESSION["usuario"], "!
               Nº visitas: ", $_SESSION["visita"], "
               Pagina anterior: ", $_SESSION["visitado"]," </h1>";
-    print_r($_COOKIE);
+    //print_r($_COOKIE);
 }
 
 

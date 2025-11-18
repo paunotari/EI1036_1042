@@ -38,7 +38,7 @@ function getMousePos(canvas, evt){
     var rect = canvas.getBoundingClientRect();
     return{
         x: evt.clientX - rect.left, // or offsetX, offsetY -> devuelve las coordenadas el target en el que has hecho click (canvas) directamente
-        y: evt.clientY - rect.top
+        y: evt.offsetY  //uno de cada forma para que veas que es lo mismo
     }
 }
 
