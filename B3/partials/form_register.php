@@ -12,7 +12,7 @@
 
   <h2>Formulario de Registro</h2>
 
-  <form action="?action=reg_acti_DB">  
+  <form action="?action=reg_acti_DB" method="POST">  
   
     <label for="login">Login:</label><br>
     <input type="text" id="login" name="login" required><br><br>

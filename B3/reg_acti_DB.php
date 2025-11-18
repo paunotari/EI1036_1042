@@ -8,17 +8,28 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 
 
-
 $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
 
-function insertar($pdo, $table, $valores){
-    $query = "INSERT INTO $table VALUES (?)";
-    $consult = $pdo -> prepare($query);
-    $a = $consult -> execute($valores);
-    if(1>$a) echo "Incorrecto";
+
+//Comprobar si el formulario ha enviado realmente los datos
+if(!isset($_POST["login"], $_POST["password"], $_POST["rol"])){
+    $error_msg = "Faltan datos del formulario";
+    $central = "/partials/form_register.php";
 }
 
-$valores = [$_REQUEST["login"], $_REQUEST["password"], $_REQUEST["rol"]];
+
+
+$valores = [$_POST["login"], $_POST["password"], $_POST["rol"]];
+
+
+function insertar($pdo, $table, $valores){
+    $query = "INSERT INTO $table (login, passwd, rol) VALUES (?, ?, ?)";
+    $consult = $pdo -> prepare($query);
+    $a = $consult -> execute($valores);
+    if(!$a) echo "Incorrecto";
+}
+
+
 
 //insertar los valores enviados en el formulario de registro
 insertar ($pdo, "usuarios", $valores);
@@ -31,18 +42,23 @@ function _H($string) {
 // Fer consulta i mostrar valors com una taula html
 try {
     $stmt = $pdo->prepare("select * from usuarios where login=?");
-    $stmt->execute(array($_REQUEST["login"]));
+    $stmt->execute(array($valores[0]));
     $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
+
     print "<table>";
+
     foreach($rows as  $row) {
         print"<tr>";
           foreach($row as  $key=>$val) {
               print"<td>"._H($key).":"._H($val)."</td>";}
           print"</tr>";}
+
     print "</table>";
+
+    $central = "/partials/form_register.php";
     
 
 ?>
