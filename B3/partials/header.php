@@ -33,6 +33,8 @@
 		}
 });
 </script>
+<!-- script aside meteorológico -->
+<script type="text/javascript" src="./partials/meteoro.js" async defer></script>
 </head>
 
 

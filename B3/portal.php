@@ -123,6 +123,9 @@ if (isset($error_msg)) require_once(dirname(__FILE__) . "/partials/error.php");
 //Añadido - En esta posición especifica, después de header y menú, para que aparezca en medio de la web
 require_once(dirname(__FILE__) . "/partials/noticias.php");
 
+//B5 add aside con condiciones meteoriológicas de tu empresa (update every 3min) 
+require_once(dirname(__FILE__) . "/partials/aside_meteoro.php");
+
 require_once(dirname(__FILE__) . $central);
 
 require_once(dirname(__FILE__) . "/partials/footer.php");
