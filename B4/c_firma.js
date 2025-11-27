@@ -42,5 +42,11 @@ function ready() {
     document.querySelector("#guardar").addEventListener("click", function () {
         imagen.src = canvas.toDataURL();
     });
+    //ADDED FOR DOWNLOAD
+    document.querySelector("#download").addEventListener("click", function () {
+        //hfer del elemento class download --> firma del canvas
+        this.href = canvas.toDataURL();
+    });
 }
-ready()
+
+document.addEventListener("DOMContentLoaded", ready);

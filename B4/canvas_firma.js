@@ -43,4 +43,5 @@ function ready() {
         imagen.src = canvas.toDataURL();
     });
 }
-ready()
+
+document.addEventListener("DOMContentLoaded", ready());

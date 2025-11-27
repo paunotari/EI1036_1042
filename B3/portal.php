@@ -84,8 +84,11 @@ if (isset($_GET['action']) && (!isset($_SERVER['HTTP_REFERER']) || strpos($_SERV
         case "reg_acti_DB":
             require_once(dirname(__FILE__) . "/reg_acti_DB.php"); // Se ejecuta al momento
             break;
-        
-        
+
+        //Added B4 EJ8
+        case "login":
+            $central = "/partials/login.php";
+            break;
 
         //Añadido B3
         case "form_foto":

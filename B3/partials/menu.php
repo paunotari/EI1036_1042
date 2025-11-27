@@ -28,6 +28,9 @@
 		<li>
 			<a href="?action=form_foto"> Formulari Foto</a>
 		</li>
+		<li>
+			<a href="?action=login"> LogIn</a>
+		</li>
 
 
 
